@@ -19,7 +19,7 @@ public class MemberServlet extends HttpServlet {
         members = new HashMap<>();
         members.put("alex", new Member("Юдаков Олександр", "Фахівець з Java"));
         members.put("max", new Member("Вавринюк Максим", "Системний адміністратор"));
-        members.put("sofia", new Member("Лємєшова Софія", "UX/UI дизайнерка"));
+        members.put("sofiia", new Member("Лємєшова Софія", "UX/UI дизайнерка"));
         members.put("yehor", new Member("Тітов Єгор", "DevOps інженер"));
     }
 
