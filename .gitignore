@@ -1,6 +1,46 @@
+# NetBeans specific
+nbproject/private/
+nbbuild/
+build/
+dist/
+*.bak
+*.log
+
+# Maven or Gradle build folders
+target/
+.gradle/
+build/
+
+# IDE settings (optional but common)
+*.iml
+.idea/
+*.ipr
+*.iws
+
+# Tomcat deployment output
+tomcat/work/
+tomcat/temp/
+tomcat/logs/
+tomcat/webapps/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Java garbage
+*.class
+*.jar
+*.war
+*.ear
+
+# Git
+.git/
+*.swp
+*.swo
 nbproject/private/
 build/
 dist/
+/target/
 *.log
 *.class
 *.war
