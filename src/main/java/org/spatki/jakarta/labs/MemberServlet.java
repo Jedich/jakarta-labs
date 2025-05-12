@@ -18,7 +18,7 @@ public class MemberServlet extends HttpServlet {
     public void init() throws ServletException {
         members = new HashMap<>();
         members.put("alex", new Member("Юдаков Олександр", "Фахівець з Java"));
-        members.put("max", new Member("Вавринюк Максим", "Системний адміністратор"));
+        members.put("max", new Member("Вавринюк Максим", "Vibe coder"));
         members.put("sofiia", new Member("Лємєшова Софія", "UX/UI дизайнерка"));
         members.put("yehor", new Member("Тітов Єгор", "DevOps інженер"));
     }
