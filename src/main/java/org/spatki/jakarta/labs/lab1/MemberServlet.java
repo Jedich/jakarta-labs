@@ -1,4 +1,4 @@
-package org.spatki.jakarta.labs;
+package org.spatki.jakarta.labs.lab1;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -40,10 +40,10 @@ public class MemberServlet extends HttpServlet {
             out.printf("<h2>%s</h2><p>%s</p>", m.name, m.description);
         } else {
             out.println("<h2>Учасника не знайдено</h2>");
-            out.println("<p>Спробуйте: ?id=ivan, petro, olga або maria</p>");
+            out.println("<p>Спробуйте: ?id=alex, max, sofiia або yehor</p>");
         }
 
-        out.println("<p><a href='index.html'>Назад на головну</a></p>");
+        out.println("<p><a href='lab1.html'>Назад на головну</a></p>");
         out.println("</body></html>");
     }
 
