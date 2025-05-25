@@ -1,0 +1,35 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page pageEncoding="UTF-8" %>
+<header>
+    <a href="/topics">
+        <img alt="MainImg" src="https://chamilo.org/wp-content/uploads/2018/09/foro_global.png"
+             width="100">
+    </a>
+    <form class="search-form" action="search">
+        <input style="margin: 2px" class="form-control" type="text" name="text" placeholder="Search" value="${text}" />
+        <input style="margin-left: 5px" class="btn btn-primary" type="submit" value="Search" />
+    </form>
+    <div class="nav-buttons">
+        <c:if test="${pageContext.request.requestURI ne '/WEB-INF/jsp/topics.jsp'}">
+            <form action=".." method="POST">
+                <input class="btn btn-secondary" type="submit" value="Return" />
+            </form>
+        </c:if>
+        <form action="/lab1.html" method="POST">
+            <input class="btn btn-primary" type="submit" value="to lab1" />
+        </form>
+    </div>
+    <c:if test="${!empty user}">
+        <form class="login-form" action="logout" method="POST">            
+            <c:out value="${user.name}"/><br>
+            <input type="submit" value="Log Out" />
+        </form>
+    </c:if>
+    <c:if test="${empty user}">
+        <form class="login-form" action="/login" method="POST">
+            <input style="margin: 2px" class="form-control" type="text" name="login" value="" />
+            <input style="margin: 2px"class="form-control" type="password" name="password" value="" />
+            <input style="margin: 2px"class="btn btn-primary" type="submit" value="Log In" />
+        </form>
+    </c:if>
+</header>
