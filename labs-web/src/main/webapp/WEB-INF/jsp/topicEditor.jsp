@@ -11,7 +11,7 @@
         <%@include file="header.jspf"%>
         <section>
             <div class="topic-title">
-                <h1>Old topic name: "${topic.title}"</h1>
+                <h1>Old topic name: '<c:out value="${topic.title}"/>'</h1>
             </div>
 
             <c:if test="${!empty user}">

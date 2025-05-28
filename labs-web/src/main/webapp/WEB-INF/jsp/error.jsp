@@ -12,10 +12,10 @@
         <title>Forum</title>
         <%@include file="dependencies.jspf"%>
     </head>
-    <body>
+    <body class="content">
         <%@include file="header.jspf"%>
         <section>
-            <h1>${message}</h1>
+            <h1><c:out value="${message}"/></h1>
             <a href=".">Go to main page</a>
         </section>  
         <br>

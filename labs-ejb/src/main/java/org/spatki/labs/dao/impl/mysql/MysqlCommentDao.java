@@ -1,6 +1,8 @@
 package org.spatki.labs.dao.impl.mysql;
 
 import jakarta.ejb.Stateless;
+import jakarta.ejb.TransactionAttribute;
+import jakarta.ejb.TransactionAttributeType;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
@@ -24,6 +26,9 @@ public class MysqlCommentDao implements CommentDao {
     @Transactional
     public void addComment(Topic topic, User user, String text) {
         Comment comment = new Comment(-1, topic, user, text);
+        if (text == null || text.equals("")) {
+            throw new IllegalArgumentException("Text is empty!");
+        }
         em.persist(comment);
         topic.getComments().add(comment);
         em.merge(topic);

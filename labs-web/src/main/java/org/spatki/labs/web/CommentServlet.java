@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.spatki.labs.model.*;
 import org.spatki.labs.services.TopicServiceLocal;
 
-
 @WebServlet(name = "CommentServlet", urlPatterns = {"/comment"})
 public class CommentServlet extends BaseServlet {
 
@@ -18,7 +17,7 @@ public class CommentServlet extends BaseServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         response.setContentType("text/html;charset=UTF-8");
 
         User user = (User) request.getSession().getAttribute("user");
@@ -37,7 +36,11 @@ public class CommentServlet extends BaseServlet {
 
         String text = request.getParameter("text");
 
-        topicService.addComment(topic, user, text);
+        try {
+            topicService.addComment(topic, user, text);
+        } catch (jakarta.ejb.EJBTransactionRolledbackException e) {
+            error(request, response, "Transaction rolled back: " + e.toString());
+        }
         response.sendRedirect("/topics/topic?topicId=" + topicId);
     }
 
