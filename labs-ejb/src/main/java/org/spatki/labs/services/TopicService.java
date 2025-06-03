@@ -1,6 +1,5 @@
 package org.spatki.labs.services;
 
-import org.spatki.labs.dao.UserDao;
 import org.spatki.labs.dao.CommentDao;
 import org.spatki.labs.dao.TopicDao;
 import jakarta.ejb.EJB;
@@ -17,9 +16,6 @@ public class TopicService implements TopicServiceLocal {
 
     @EJB
     CommentDao commentDao;
-
-    @EJB
-    UserDao userDao;
 
     public TopicService() {
     }

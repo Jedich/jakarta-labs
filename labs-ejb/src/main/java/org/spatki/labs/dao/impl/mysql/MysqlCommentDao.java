@@ -1,12 +1,9 @@
 package org.spatki.labs.dao.impl.mysql;
 
 import jakarta.ejb.Stateless;
-import jakarta.ejb.TransactionAttribute;
-import jakarta.ejb.TransactionAttributeType;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
-import jakarta.transaction.Transactional;
 import org.spatki.labs.dao.CommentDao;
 import org.spatki.labs.model.Comment;
 import org.spatki.labs.model.Topic;
@@ -23,7 +20,6 @@ public class MysqlCommentDao implements CommentDao {
     }
 
     @Override
-    @Transactional
     public void addComment(Topic topic, User user, String text) {
         Comment comment = new Comment(-1, topic, user, text);
         if (text == null || text.equals("")) {
@@ -43,7 +39,6 @@ public class MysqlCommentDao implements CommentDao {
     }
 
     @Override
-    @Transactional
     public void insert(Comment e, boolean generateId) {
         em.persist(e);
     }
@@ -55,7 +50,6 @@ public class MysqlCommentDao implements CommentDao {
     }
 
     @Override
-    @Transactional
     public void update(Comment e) {
         em.merge(e);
     }

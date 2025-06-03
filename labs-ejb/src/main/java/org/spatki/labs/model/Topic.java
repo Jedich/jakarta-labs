@@ -77,5 +77,4 @@ public class Topic implements Serializable {
     public int getNumberOfComments() {
         return comments.size();
     }
-
 }

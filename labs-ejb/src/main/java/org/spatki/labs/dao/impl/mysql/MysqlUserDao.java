@@ -1,10 +1,8 @@
 package org.spatki.labs.dao.impl.mysql;
 
-import jakarta.ejb.Stateful;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.PersistenceUnit;
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import java.util.Collection;

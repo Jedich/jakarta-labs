@@ -1,12 +1,12 @@
 package org.spatki.labs.services;
 
 import jakarta.ejb.EJB;
-import jakarta.ejb.Stateful;
+import jakarta.ejb.Stateless;
 import org.spatki.labs.model.User;
 import java.util.function.UnaryOperator;
 import org.spatki.labs.dao.UserDao;
 
-@Stateful
+@Stateless
 public class UserService implements UserServiceLocal {
 
     @EJB

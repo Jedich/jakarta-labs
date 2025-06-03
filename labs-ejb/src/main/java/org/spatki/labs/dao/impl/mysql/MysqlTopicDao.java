@@ -1,11 +1,9 @@
 package org.spatki.labs.dao.impl.mysql;
 
-import jakarta.ejb.Stateful;
 import org.spatki.labs.model.Topic;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.PersistenceUnit;
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import org.spatki.labs.dao.TopicDao;
@@ -39,7 +37,6 @@ public class MysqlTopicDao implements TopicDao {
     }
 
     @Override
-    @Transactional
     public void insert(Topic topic, boolean generateId) {
         em.persist(topic);
     }

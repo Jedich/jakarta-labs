@@ -21,7 +21,7 @@
     </div>
     <c:choose>
         <c:when test="${!empty user}">
-            <form class="login-form" action="logout" method="POST">            
+            <form class="login-form" action="/logout" method="POST">            
                 <c:out value="${user.name}"/><br>
                 <input type="submit" value="Log Out" />
             </form>
